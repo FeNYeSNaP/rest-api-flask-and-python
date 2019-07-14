@@ -1,0 +1,61 @@
+rest api principles
+
+what is rest api?
+- it's a way of thinking about how a web server responds to your requests
+- It doesn't respond with just data
+- It responds with resources
+
+Resources?
+- Similar to object-oriented programming
+- Think of the server as having resources, and each is able to interact with the pertinent (az őt megtaláló) request
+
+        Item resource
+GET     /item/chair
+
+POST    /item/chair   With extra data
+PUT     /item/chair   With extra data
+DELETE  /item/chair
+
+
+        ItemList resource
+GET     /items   Not individual resource
+
+
+Stateless
+- Another key feature is that REST is supposed (feltételezett) to be stateless
+- This means one request cannot depend on any other request
+- The server only knows about the current request, ant not any previous requests
+
+Example:
+- POST /item/chair creates an item
+- The server does not know the item now exists
+- GET /item/chair then goes to the database and checks to see if the item is there
+- To get an item you do not need to have created an item before - the item could in the database from previously
+
+Example2:
+- A user logs in to a web application
+- The web server does not know the user is logged in (since it does not remember any state)
+- What do we do?
+- the web application must send enough data to identify the user _in every request_, or else the server won't
+  associate the request with the user
+
+
+-------------
+Section 4
+flask estension
+Flask==0.11.1 kellene
+Flask==1.1.0 van
+
+
+lambda function
+        item = filter(lambda x: x['name'] == name, items)
+
+        =
+
+        for item in items:
+            if item['name'] == name:
+                return item
+
+        még jobb:
+        item = next(filter(lambda x: x['name'] == name, items), None)
+        return {'item': item}, 200 if item else 404

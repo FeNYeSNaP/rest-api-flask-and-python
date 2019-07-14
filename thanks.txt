@@ -1,0 +1,3 @@
+Kanya, Zoli for strat game
+Jose Salvatierra - for REST APIs with Flask an Python curse on Udemy: https://nextent.udemy.com/rest-api-flask-and-python/learn/lecture/5960042#announcements
+
