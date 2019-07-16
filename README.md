@@ -1,6 +1,6 @@
 #Project Title
 Python REST API and Flask curse project.
-
+This is built with Flask, Flask-RESTful, Flask-JWT, and Flask-SQLAlchemy
 ##Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
